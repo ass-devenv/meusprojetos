@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<faces-config version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+ 
+	<application> 
+			<resource-bundle> 
+				<base-name>messagess</base-name> 
+				<var>bundle</var>				 
+			</resource-bundle> 
+			
+			<message-bundle id="msg">messagess</message-bundle>
+			
+			<locale-config>
+			<default-locale>pt_BR</default-locale>
+			<supported-locale>pt_BR</supported-locale>
+			</locale-config>
+			
+	</application>
+
+	<managed-bean>
+	
+		<managed-bean-name>empresaBean</managed-bean-name>
+		<managed-bean-class>br.com.gestao.controller.EmpresaBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+
+	</managed-bean>
+	
+	<managed-bean>
+	
+		<managed-bean-name>pessoaBean</managed-bean-name>
+		<managed-bean-class>br.com.gestao.controller.PessoaBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		
+	</managed-bean>
+	
+	<navigation-rule>
+	
+		<from-view-id>/login.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>cadastro_empresa</from-outcome>
+			<to-view-id>/cadastro_empresa.xhtml</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>index</from-outcome>
+			<to-view-id>/index.xhtml</to-view-id>
+		</navigation-case>
+	
+	</navigation-rule>
+	
+	
+	<navigation-rule>
+
+		<from-view-id>/cadastro_empresa.xhtml</from-view-id>
+			<navigation-case>
+				<from-outcome>success</from-outcome>
+				<to-view-id>/sucesso.xhtml</to-view-id>
+			</navigation-case>
+
+			<navigation-case>
+				<from-outcome>failure</from-outcome>
+				<to-view-id>/falhou.xhtml</to-view-id>
+			</navigation-case>
+
+			<navigation-case>
+				<from-outcome>new</from-outcome>
+				<to-view-id>/cadastro_empresa.xhtml</to-view-id>		
+			</navigation-case>
+	
+	</navigation-rule>
+	
+	<navigation-rule>
+	    
+	    <from-view-id>/cadastro_pessoa.xhtml</from-view-id>
+	    
+	    <navigation-case>
+	        <from-outcome>success</from-outcome>
+	        <to-view-id>/people.xhtml</to-view-id>
+	    </navigation-case>
+	    
+	    <navigation-case>
+	        <from-outcome>failure</from-outcome>
+	        <to-view-id>/falhou.xhtml</to-view-id>
+	    </navigation-case>   
+	    
+	</navigation-rule>
+	
+	<validator>
+  		<validator-id>cpf</validator-id>
+  		<validator-class>br.com.gestao.util.ValidatorCPF</validator-class>
+	</validator>
+
+</faces-config>

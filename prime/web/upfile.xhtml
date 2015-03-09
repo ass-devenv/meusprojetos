@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+
+
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Upload File</title>
+	</h:head>
+	
+	<h:body>
+
+	<h:form enctype="multipart/form-data">	
+		<p:growl id="g_messages" showDetail="true" />
+		<h:messages />
+	
+    	<p:panel header="Upload de Arquivos">  
+    	                                  
+        	<p:messages id="messages1" showDetail="true"/>
+        	
+        		<p:fileUpload id="file_upload" mode="advanced" required="true" style="margin-top: 15px;"
+	            	requiredMessage="É necessário o envio de pelo menos um arquivo!"
+	                allowTypes="/(\.|\/)(gif|jpe?g|rtf|odt|png|doc|docx|xls|xlsx|pps|ppsx|ppt|pptx|pdf|jpg|zip|txt|7z|rar)$/"
+	            	invalidFileMessage="Tipo de arquivo não permitido" 
+	            	invalidSizeMessage="Arquivo com tamanho acima do permitido" 
+	            	uploadLabel="Enviar Arquivos" 
+	            	cancelLabel="Cancelar"  
+	            	label="Selecionar..." 
+	            	multiple="true" 
+	            	sizeLimit="10485760" 
+	            	update="g_messages" 
+	            	fileUploadListener="#{fileUpload.upload}"/>         
+                        
+                 
+      	</p:panel>     	
+      	
+   	</h:form>
+   	
+   	<h:form>
+   	<p:growl id="g_messages" showDetail="true" />
+   	<h:messages />
+   		<p:panel header="Repositório dos Arquivos">    	  	
+             	   		   		      		
+      			<p:tree id="docs" value="#{tree.root}" var="doc" selectionMode="single" selection="#{tree.selectedNode}" dynamic="true">    				
+    				<p:treeNode icon="ui-icon-document">
+        				<h:outputText value="#{doc}" />
+    				</p:treeNode> 
+    			</p:tree>
+    		
+    			<p:contextMenu for="docs">
+    				<p:menuitem value="View" update="g_messages" actionListener="#{tree.displaySelectedSingle}" />
+    				<p:menuitem value="Delete" update="docs" actionListener="#{tree.deleteNode}" rendered="true" />
+    			</p:contextMenu>
+    		
+            </p:panel>   		
+   	</h:form>
+   	
+   	
+</h:body>
+	
+</html>

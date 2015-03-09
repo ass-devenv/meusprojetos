@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:a4j="http://richfaces.org/a4j"
+	  xmlns:rich="http://richfaces.org/rich">
+			
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<link rel="stylesheet" type="text/css" href="css/print.css" />		
+		<title>Enterprise in the Cloud</title>		
+	</h:head>
+	
+	<h:body>
+			
+			<h1>EMPRESAS CADASTRADAS</h1>
+					
+	<h:form>
+						
+		<rich:dataTable id="tabelaEmp" value="#{empresaBean.empresas}" var="empresa">
+			
+			<rich:column> <!-- Razao Social -->
+			
+				<f:facet name="header">
+					<h:outputText value="#{bundle.label_reason_enterprise}"  />
+				</f:facet>
+			
+				<h:outputText value="#{empresa.razao}"></h:outputText >
+			
+			</rich:column>
+
+			<rich:column> <!-- Nome Fantazia -->
+			
+				<f:facet name="header">
+					<h:outputText value="#{bundle.label_fantasy_enterprise}" />
+				</f:facet>
+			
+				<h:outputText value="#{empresa.fantazia}"></h:outputText >
+			
+			</rich:column>
+
+			<rich:column> <!-- CPF/CNPJ -->
+	
+				<f:facet name="header">
+					<h:outputText value="#{bundle.label_CNPJ_CPF_enterprise}" />
+				</f:facet>
+				<h:outputText value="#{empresa.cpf_cnpj}"></h:outputText >
+	
+			</rich:column>
+			
+			<rich:column> <!-- Ins. Estadual -->
+	
+				<f:facet name="header">
+					<h:outputText value="#{bundle.label_insEstadual_enterprise}" />
+				</f:facet>
+				<h:outputText value="#{empresa.ins_estadual}"></h:outputText >
+	
+			</rich:column>			
+
+			<rich:column> <!-- Endereco -->
+	
+				<f:facet name="header">
+					<h:outputText value="#{bundle.label_address_enterprise}" />
+				</f:facet>
+				<h:outputText value="#{empresa.lougradouro}"></h:outputText >
+	
+			</rich:column>
+			
+			<rich:column> <!-- Bairro -->
+	
+				<f:facet name="header">
+					<h:outputText value="#{bundle.label_bairro_enterprise}" />
+				</f:facet>
+				<h:outputText value="#{empresa.bairro}"></h:outputText >
+	
+			</rich:column>
+			
+
+			<rich:column> <!-- Cidade -->			
+	
+				<f:facet name="header">
+					<h:outputText value="#{bundle.label_city_enterprise}" />
+				</f:facet>
+				<h:outputText value="#{empresa.municipio}"></h:outputText >
+	
+			</rich:column>
+
+			<rich:column> <!-- Estado -->
+	
+				<f:facet name="header">
+					<h:outputText value="#{bundle.label_state_enterprise}" />
+				</f:facet>
+				<h:outputText value="#{empresa.estado}"></h:outputText >
+	
+			</rich:column>
+
+			<rich:column> <!-- CEP -->
+	
+				<f:facet name="header">
+					<h:outputText value="#{bundle.label_zipCode_enterprise}" />
+				</f:facet>
+				<h:outputText value="#{empresa.cep}"></h:outputText >
+	
+			</rich:column>
+	
+			<rich:column> <!-- Telefone -->
+	
+				<f:facet name="header">
+					<h:outputText value="#{bundle.label_phone_enterprise}" />
+				</f:facet>
+				<h:outputText value="#{empresa.telefone}"></h:outputText >
+	
+			</rich:column>
+
+			<rich:column> <!-- E-mail -->
+	
+				<f:facet name="header">
+					<h:outputText value="#{bundle.label_email_enterprise}" />
+				</f:facet>
+				<h:outputText value="#{empresa.email}"></h:outputText >
+	
+			</rich:column>
+			
+			<rich:column>
+	
+					<a4j:commandLink oncomplete="#{rich:component('editEmp')}.show()">
+						<h:graphicImage value="/imagem/edit.gif" alt="edit" />
+						<f:setPropertyActionListener target="#{empresaBean.emp}" value="#{empresa}" />
+					</a4j:commandLink>&nbsp;
+					
+			</rich:column>
+			
+			<rich:column>
+			
+					<a4j:commandLink oncomplete="#{rich:component('confirmacao')}.show()">
+						<h:graphicImage value="/imagem/delete.gif" alt="delete"/>
+						<f:setPropertyActionListener target="#{empresaBean.emp}" value="#{empresa}" />
+					</a4j:commandLink>
+	
+			</rich:column>
+			
+		</rich:dataTable>
+		
+		<rich:popupPanel header="Excluindo Empresa" id="confirmacao" width="270" height="90">Deseja realmente excluir?<br/>
+					
+			<a4j:commandButton value="Sim" action="#{empresaBean.btnDeletar()}" render="tabelaEmp" onclick="#{rich:component('confirmacao')}.hide();" />
+			<a4j:commandButton value="Nao" onclick="#{rich:component('confirmacao')}.hide();" />
+			
+		</rich:popupPanel>	
+		
+		<rich:popupPanel header="Editando Empresa" id="editEmp" width="370" heigth="520">
+			
+			<h:panelGrid columns="3" id="editarEmpresa">
+				
+				<h:outputText value="#{bundle.label_reason_enterprise}"/>
+				<h:inputText value="#{empresaBean.emp.razao}" /><br />
+				
+				<h:outputText value="#{bundle.label_fantasy_enterprise}"/>
+				<h:inputText value="#{empresaBean.emp.fantazia}" /><br />
+				
+				<h:outputText value="#{bundle.label_CNPJ_CPF_enterprise}"/>
+				<h:inputText value="#{empresaBean.emp.cpf_cnpj}" /><br />
+				
+				<h:outputText value="#{bundle.label_insEstadual_enterprise}"/>
+				<h:inputText value="#{empresaBean.emp.ins_estadual}"/><br />				
+				
+				<h:outputText value="#{bundle.label_address_enterprise}"/>
+				<h:inputText value="#{empresaBean.emp.lougradouro}" /><br />
+				
+				<h:outputText value="#{bundle.label_bairro_enterprise}"/>
+				<h:inputText value="#{empresaBean.emp.bairro}" /><br />				
+				
+				<h:outputText value="#{bundle.label_city_enterprise}"/>
+				<h:inputText value="#{empresaBean.emp.municipio}" /><br />
+				
+				<h:outputText value="#{bundle.label_state_enterprise}"/>
+				<h:inputText value="#{empresaBean.emp.estado}" /><br />
+				
+				<h:outputText value="#{bundle.label_zipCode_enterprise}"/>
+				<h:inputText value="#{empresaBean.emp.cep}" /><br />
+				
+				<h:outputText value="#{bundle.label_phone_enterprise}"/>
+				<h:inputText value="#{empresaBean.emp.telefone}" /><br />
+				
+				<h:outputText value="#{bundle.label_email_enterprise}"/>
+				<h:inputText value="#{empresaBean.emp.email}" /><br />
+							
+			</h:panelGrid>
+			
+			<a4j:commandButton value="SALVAR" action="#{empresaBean.btnAlterar()}" render="tabelaEmp" onclick="#{rich:component('editEmp')}.hide();"></a4j:commandButton>
+			<a4j:commandButton value="CANCELAR" onclick="#{rich:component('editEmp')}.hide();"></a4j:commandButton>
+		
+		</rich:popupPanel>		
+	
+	<h:commandLink action="index" value="Voltar a pagina Principal" />	
+	
+	</h:form>
+
+</h:body>
+</html>

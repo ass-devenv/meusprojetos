@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:a4j="http://richfaces.org/a4j"
+	  xmlns:rich="http://richfaces.org/rich">
+			
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<link rel="stylesheet" type="text/css" href="css/print.css" />		
+		<title>Enterprise in the Cloud</title>		
+	</h:head>
+	
+	<h:body>
+		
+		<h1>PROCEDIMENTO REALIZADO COM SUCESSO!</h1>
+		
+		<h:form>
+			<h:message />
+			<h:panelGrid columns="3" id="editarPessoa">
+				
+				<h:outputText value="#{bundle.label_CPF_people}"/>
+				<h:outputText value="#{pessoaBean.pessoa.cpf}" /><br />
+				
+				<h:outputText value="#{bundle.label_RG_people}"/>
+				<h:outputText value="#{pessoaBean.pessoa.rg}" /><br />
+				
+				<h:outputText value="#{bundle.label_first_name_people}"/>
+				<h:outputText value="#{pessoaBean.pessoa.nome}" /><br />
+				
+				<h:outputText value="#{bundle.label_last_name_people}"/>
+				<h:outputText value="#{pessoaBean.pessoa.sobrenome}"/><br />				
+				
+				<h:outputText value="#{bundle.label_status_civil}"/>
+				<h:outputText value="#{pessoaBean.pessoa.estCivil}" /><br />
+				
+				<h:outputText value="#{bundle.label_date_nasc_people}"/>
+				<h:outputText value="#{pessoaBean.pessoa.data_nasc}" /><br />				
+				
+				<h:outputText value="#{bundle.label_address_people}"/>
+				<h:outputText value="#{pessoaBean.pessoa.logradouro}" /><br />
+				
+				<h:outputText value="#{bundle.label_bairro_people}"/>
+				<h:outputText value="#{pessoaBean.pessoa.bairro}" /><br />
+				
+				<h:outputText value="#{bundle.label_city_people}"/>
+				<h:outputText value="#{pessoaBean.pessoa.municipio}" /><br />
+				
+				<h:outputText value="#{bundle.label_state_people}"/>
+				<h:outputText value="#{pessoaBean.pessoa.estado}" /><br />
+				
+				<h:outputText value="#{bundle.label_zipCode_people}"/>
+				<h:outputText value="#{pessoaBean.pessoa.cep}" /><br />
+				
+				<h:outputText value="#{bundle.label_phone_people}"/>
+				<h:outputText value="#{pessoaBean.pessoa.tel}" /><br />
+				
+				<h:outputText value="#{bundle.label_mobile_phone}"/>
+				<h:outputText value="#{pessoaBean.pessoa.cel}" /><br />
+				
+				<h:outputText value="#{bundle.label_email_people}"/>
+				<h:outputText value="#{pessoaBean.pessoa.email}" /><br />
+				
+				<h:outputText value="#{bundle.label_credit_people}"/>
+				<h:outputText value="#{pessoaBean.pessoa.credito}" /><br />
+							
+			</h:panelGrid>			
+			
+			<h:commandLink action="index" value="Voltar a pagina principal." />
+		
+		</h:form>		
+	</h:body>
+	</html>

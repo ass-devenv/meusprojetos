@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+    
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />        
+        
+        <link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
+		<link rel="stylesheet" href="css/print.css" media="print" />
+        
+        <title>Enterprise in the Cloud</title>
+        
+    </h:head>
+    
+    <h:body>
+    
+        <div id="container">
+        
+        	<div id="header" align="right">
+            	<ui:insert name="header">
+            		<h:graphicImage value="/imagem/logo.jpg" width="100" height="100" border="0" style=" width : 234px;"/>
+            	</ui:insert>
+            </div>
+            
+            <div id="mainnav">
+            	<ui:insert name="mainnav">
+             		<h:form>  
+				    <p:growl id="messages"/>
+				 
+				    <p:menubar>
+				        <p:submenu label="Cadastro" icon="ui-icon-document">
+				            <p:submenu label="Pessoa Juridica">
+				                <p:menuitem value="Cadastrar" url="#" action="cadastro_empresa.xhtml"/>
+				                <p:menuitem value="Consultar" url="#" action="consultar_empresa.xhtml" />
+				            </p:submenu>
+				            <p:submenu label="Pessoa Fisica">
+				            	<p:menuitem value="Cadastrar" url="#" action="cadastro_pessoa.xhtml"/>
+				                <p:menuitem value="Consultar" url="#" action="consultar_pessoa.xhtml" />
+				            </p:submenu>
+				            <p:menuitem value="Open" url="#" />
+				            <p:separator />
+				            <p:menuitem value="Quit" url="#" />
+				        </p:submenu>
+				 
+				        <p:submenu label="Edit" icon="ui-icon-pencil">
+				            <p:menuitem value="Undo" url="#"  />
+				            <p:menuitem value="Redo" url="#"  />
+				        </p:submenu>
+				 
+				        <p:submenu label="Help" icon="ui-icon-help">
+				            <p:menuitem value="Contents" url="#" />
+				            <p:submenu label="Search">
+				                <p:submenu label="Text">
+				                    <p:menuitem value="Workspace" url="#" />
+				                </p:submenu>
+				                <p:menuitem value="File" url="#" />
+				            </p:submenu>
+				        </p:submenu>
+				 
+				        <p:submenu label="Actions" icon="ui-icon-gear">
+				            <p:submenu label="Ajax">
+				                <p:menuitem value="Save"   update="messages"/>
+				                <p:menuitem value="Update"  update="messages"/>
+				            </p:submenu>
+				            <p:submenu label="Non-Ajax">
+				                <p:menuitem value="Delete"  update="messages" ajax="false"/>
+				            </p:submenu>
+				        </p:submenu>
+				 
+				        <p:menuitem value="Quit" url="http://www.primefaces.org"/>
+				 
+				        <f:facet name="options">
+				            <p:inputText style="margin-right:10px" pt:placeholder="Search"/>
+				            <p:commandButton type="button" value="Logout"/>
+				        </f:facet>
+				    </p:menubar>
+				</h:form>
+             	</ui:insert>
+            </div>
+        
+        	<div id="contents">
+            	 <ui:insert name="contents">
+            	 	
+            	 </ui:insert>
+        	</div>
+        	
+        	<div id="footer">
+        		<ui:insert name="footer">
+	  			 	Copyright - Alex Soares - 2015
+	  			</ui:insert>
+			</div>
+        	
+   </div>
+        
+    </h:body>
+</html>

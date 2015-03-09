@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+    
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Enterprise in the Cloud</title>
+	</head>
+
+	
+	<h:body>
+	
+      <h:form>
+     	<fieldset> 
+       		<legend><h:outputText value="Autorizacao" style="font-size:16px"/></legend>
+       		
+       		<h1><h:outputText value="Bem vindo(a) ao sistema."/></h1>
+        
+        	<h:panelGrid id="gridLoginSenha" columns="2">
+          	
+          	<h:outputText id="loginText" value="Login:"/>
+          	<h:inputText label="Login" value="#{}" required="true"/>
+          
+          	<h:outputText id="senhaText" value="Senha:"/>          
+          	<h:inputSecret label="Senha" value="#{}" required="true"/>
+
+        	</h:panelGrid>
+        	
+        	
+        	<h:commandButton value="Entrar" action="#{}" />
+		</fieldset>
+      </h:form>
+      
+    </h:body>
+
+
+
+</html>

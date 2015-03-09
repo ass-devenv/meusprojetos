@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+			
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		
+		<link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
+		<link rel="stylesheet" href="css/print.css" media="print" />
+		
+		<title>Enterprise in the Cloud</title>		
+	</h:head>
+
+	<h:body>
+	
+		<div id="container">			
+			
+			<div id="header" align="right">			
+				<h:graphicImage value="/imagem/logo.jpg" width="100" height="100" border="0" style=" width : 234px;"/>
+			</div>
+			
+			<div id="mainnav">
+				<h:form>  
+				    <p:growl id="messages"/>
+				 
+				    <p:menubar>
+				        <p:submenu label="Cadastro" icon="ui-icon-document">
+				            <p:submenu label="Pessoa Juridica">
+				                <p:menuitem value="Cadastrar" url="#" action="cadastro_empresa.xhtml"/>
+				                <p:menuitem value="Consultar" url="#" action="consultar_empresa.xhtml" />
+				            </p:submenu>
+				            <p:submenu label="Pessoa Fisica">
+				            	<p:menuitem value="Cadastrar" url="#" action="cadastro_pessoa.xhtml"/>
+				                <p:menuitem value="Consultar" url="#" action="consultar_pessoa.xhtml" />
+				            </p:submenu>
+				            <p:menuitem value="Open" url="#" />
+				            <p:separator />
+				            <p:menuitem value="Quit" url="#" />
+				        </p:submenu>
+				 
+				        <p:submenu label="Edit" icon="ui-icon-pencil">
+				            <p:menuitem value="Undo" url="#"  />
+				            <p:menuitem value="Redo" url="#"  />
+				        </p:submenu>
+				 
+				        <p:submenu label="Help" icon="ui-icon-help">
+				            <p:menuitem value="Contents" url="#" />
+				            <p:submenu label="Search">
+				                <p:submenu label="Text">
+				                    <p:menuitem value="Workspace" url="#" />
+				                </p:submenu>
+				                <p:menuitem value="File" url="#" />
+				            </p:submenu>
+				        </p:submenu>
+				 
+				        <p:submenu label="Actions" icon="ui-icon-gear">
+				            <p:submenu label="Ajax">
+				                <p:menuitem value="Save"   update="messages"/>
+				                <p:menuitem value="Update"  update="messages"/>
+				            </p:submenu>
+				            <p:submenu label="Non-Ajax">
+				                <p:menuitem value="Delete"  update="messages" ajax="false"/>
+				            </p:submenu>
+				        </p:submenu>
+				 
+				        <p:menuitem value="Quit" url="http://www.primefaces.org"/>
+				 
+				        <f:facet name="options">
+				            <p:inputText style="margin-right:10px" pt:placeholder="Search"/>
+				            <p:commandButton type="button" value="Logout"/>
+				        </f:facet>
+				    </p:menubar>
+				</h:form>
+			</div>
+			
+			<div id="contents">
+				<h:form>			
+				<p:growl id="growl" sticky="true" showDetail="true"/>
+				
+					<p:wizard flowListener="#{pessoaBean.onFlowProcess}">
+				
+						<p:tab id="personal" title="Dados Pessoa Fisica">							
+							<p:panel header="Personal Details">
+								<p:messages/>
+								<h:panelGrid columns="2" columnClasses="label, value">
+									
+									<!-- CPF -->
+									<h:outputText value="#{bundle.label_CPF_people}" />
+									<p:inputMask id="cpf" mask="999.999.999-99" value="#{pessoaBean.pessoa.cpf}" required="true" label="#{bundle.label_CPF_people}"/>
+									<h:message for="cpf"/>
+									
+									<!-- RG -->
+									<h:outputText value="#{bundle.label_RG_people}" />
+									<p:inputMask id="rg" mask="99.999.999-9" value="#{pessoaBean.pessoa.rg}" required="true" label="#{bundle.label_RG_people}"/>
+									<h:message for="rg"/>
+									
+									<!-- FIRST NAME -->
+									<h:outputText value="#{bundle.label_first_name_people}" />
+									<p:inputText id="first_name" value="#{pessoaBean.pessoa.nome}" required="true" label="#{bundle.label_first_name_people}"/>
+									<p:message for="first_name" rendered="true"></p:message>
+									
+									<!-- LAST NAME -->
+									<h:outputText value="#{bundle.label_last_name_people}" />
+									<p:inputText id="last_name" value="#{pessoaBean.pessoa.sobrenome}" required="true" label="#{bundle.label_last_name_people}"/>
+									<p:message for="last_name" rendered="true"></p:message>
+									
+									<!-- STATUS -->
+									<h:outputText value="#{bundle.label_status_civil}" />
+									<p:inputText id="status" value="#{pessoaBean.pessoa.estCivil}" required="true" label="#{bundle.label_status_civil}"/>
+									<p:message for="status" rendered="false"></p:message>
+									
+									<!-- DATE -->
+									<h:outputText value="#{bundle.label_date_nasc_people}" />
+									<p:inputText id="date" value="#{pessoaBean.pessoa.data_nasc}" required="true" label="#{bundle.label_date_nasc_people}"/>
+									<p:message for="date" rendered="false"></p:message>
+									
+								</h:panelGrid>								
+							</p:panel>
+						</p:tab>
+						
+						<p:tab id="address" title="Endereco">
+							<p:panel header="Address Details">
+								<p:messages/>
+									<h:panelGrid columns="2" columnClasses="label, value">
+										
+										<!-- ENDERECO -->
+										<h:outputText value="#{bundle.label_address_people}" />
+										<p:inputText id="end" value="#{pessoaBean.pessoa.logradouro}" required="true" label="#{bundle.label_address_people}"/>
+										<p:message for="end" rendered="false"></p:message>
+										
+										<!-- BAIRRO -->
+										<h:outputText value="#{bundle.label_bairro_people}" />
+										<p:inputText id="bairro" value="#{pessoaBean.pessoa.bairro}" required="true" label="#{bundle.label_bairro_people}"/>
+										<p:message for="bairro" rendered="false"></p:message>
+										
+										<!--CIDADE -->
+										<h:outputText value="#{bundle.label_city_enterprise}" />
+										<p:inputText id="city" value="#{pessoaBean.pessoa.municipio}" required="true" label="#{bundle.label_city_enterprise}"/>
+										<p:message for="city" rendered="false"></p:message>
+										
+										<!-- ESTADO -->
+										<h:outputText value="#{bundle.label_state_people}" />
+										<p:inputText id="state" value="#{pessoaBean.pessoa.estado}" required="true" label="#{bundle.label_state_people}"/>
+										<p:message for="state" rendered="false"></p:message>
+										
+										<!-- CEP -->	
+										<h:outputText value="#{bundle.label_zipCode_people}" />
+										<p:inputMask id="code" mask="99999-999" value="#{pessoaBean.pessoa.cep}" required="true" label="#{bundle.label_zipCode_people}"/>
+										<p:message for="code" rendered="false"></p:message>
+																					
+									</h:panelGrid>
+							</p:panel>
+						</p:tab>
+						
+						<p:tab id="contact" title="Contato">
+							<p:panel header="Contact">
+								<p:messages />
+									<h:panelGrid columns="2" columnClasses="label, value">
+																		
+										<!-- TELEFONE -->
+										<h:outputText value="#{bundle.label_phone_people}" />
+										<p:inputMask id="phone" mask="(99)9999-9999" value="#{pessoaBean.pessoa.tel}" required="true" label="#{bundle.label_phone_people}"/>
+										<p:message for="phone" rendered="false"></p:message>
+									
+										<!-- CELULAR -->
+										<h:outputText value="#{bundle.label_mobile_phone}" />
+										<p:inputMask id="mobile" mask="(99)99999-9999" value="#{pessoaBean.pessoa.cel}" required="true" label="#{bundle.label_mobile_phone}"/>
+										<p:message for="mobile" rendered="false"></p:message>
+										
+										<!-- E-MAIL -->
+										<h:outputText value="#{bundle.label_email_people}" />
+										<p:inputText id="email" value="#{pessoaBean.pessoa.email}" required="true" label="#{bundle.label_email_people}">
+											<f:validateRegex pattern="^(([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5}){1,25})+([;.](([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5}){1,25})+)*$"></f:validateRegex>
+										</p:inputText>	
+										<p:message for="email" rendered="true"></p:message>
+															
+									</h:panelGrid>								
+							</p:panel>
+						</p:tab>
+						
+						<p:tab>
+							<p:panel>
+								<p:messages/>
+									<h:panelGrid columns="2" columnClasses="label, value">
+										
+										<!-- LIMITE -->
+										<h:outputText value="#{bundle.label_credit_people}">
+											<f:convertNumber currencyCode="BRL" type="currency"/>
+										</h:outputText>
+										
+										<h:inputText id="credit" value="#{pessoaBean.pessoa.credito}" required="true" label="#{bundle.label_credit_people}">
+											<f:convertNumber minFractionDigits="2"/>
+										</h:inputText>
+										<p:message for="credit" rendered="false"></p:message>																			
+									</h:panelGrid>									
+									
+									<p:commandButton value="SALVAR" actionListener="#{pessoaBean.btnSave}" update="growl" process="@this">
+            						</p:commandButton>
+            									
+									<p:commandButton value="CANCELAR" action="index.xhtml">
+									</p:commandButton>									
+							</p:panel>
+						</p:tab>
+							
+					</p:wizard>
+					
+           		
+			
+			</h:form>
+			
+			<br />							
+		
+		</div>			
+			
+			<div id="footer">
+				Copyright - Alex Soares - 2015
+			</div>		
+	</div>			
+	</h:body>
+</html>

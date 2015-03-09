@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:a4j="http://richfaces.org/a4j"
+	  xmlns:rich="http://richfaces.org/rich">
+			
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		
+		<link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
+		<link rel="stylesheet" href="css/print.css" media="print" />
+	
+		<title>Enterprise in the Cloud</title>		
+	
+	</h:head>
+	
+	<h:body>
+	
+	<div id="container">
+	
+		<div id="header" align="right">
+			<h:graphicImage value="/imagem/logo.jpg" width="100" height="100" border="0" style=" width : 234px;"/> 
+		</div>
+	
+		<div id="mainnav">
+			<h:form>
+				<rich:toolbar height="30px">
+					<rich:dropDownMenu>
+						<f:facet name="label">
+							<h:panelGroup>
+								<h:outputText value="Cadastro"></h:outputText>
+							</h:panelGroup>
+						</f:facet>	
+				
+						<rich:menuItem label="Pessoa Juridica" action="cadastro_empresa.xhtml"></rich:menuItem>
+						<rich:menuItem label="Pessoa Fisica" action="cadastro_pessoa.xhtml"></rich:menuItem>
+				
+						<rich:menuItem label="Consultar" action="consultar_empresa.xhtml"></rich:menuItem>
+					</rich:dropDownMenu>
+			
+					<rich:dropDownMenu>
+						<f:facet name="label">
+							<h:panelGroup>
+								<h:outputText value="#{bundle.label_consultant}"></h:outputText>
+							</h:panelGroup>
+						</f:facet>
+						<rich:menuItem label="Cadastrar" action="cadastro_consultor.xhtml"></rich:menuItem>
+						<rich:menuItem label="Consultar" action="pagemain.jsp"></rich:menuItem>
+					</rich:dropDownMenu>			
+				</rich:toolbar>
+			</h:form>
+		</div>
+	
+		<div id="contents">
+		
+		<h:form>			
+			<rich:tabPanel switchType="client" style="width : 1020px;" >
+					
+					<rich:tab header="Dados da Empresa" onheadermousemove="true">
+						<table width="600px" border="0">							
+								<tr>	
+							
+									<td width="40px" align="right" bgcolor="#CCDDEE">
+										<h:outputText id="cpf" value="#{bundle.label_CNPJ_CPF_enterprise}" style="font-size:14px"></h:outputText>
+									</td>																
+								
+									<td width="100px" bgcolor="#F7F7F7">
+										<h:inputText value="#{empresaBean.emp.cpf_cnpj}" size="30" required="true" maxlength="20">
+										</h:inputText><br />
+									</td>
+								
+									<td width="40px" align="right" bgcolor="#CCDDEE">
+										<h:outputText value="#{bundle.label_insEstadual_enterprise}" style="font-size:14px" />
+									</td>								
+								
+									<td width="100px" bgcolor="#F7F7F7">
+										<h:inputText value="#{empresaBean.emp.ins_estadual}" size="30" required="true"></h:inputText><br />
+									</td>								
+																							
+								</tr>
+							
+								<tr>
+								
+									<td width="40px" align="right" bgcolor="#CCDDEE">
+										<h:outputText value="#{bundle.label_reason_enterprise}" style="font-size:14px"></h:outputText>
+									</td>
+								
+									<td width="100px" bgcolor="#F7F7F7">
+										<h:inputText value="#{empresaBean.emp.razao}" size="30" required="true" maxlength="70"></h:inputText><br />
+									</td>
+															
+									<td width="40px" align="right" bgcolor="#CCDDEE">
+										<h:outputText value="#{bundle.label_fantasy_enterprise}" style="font-size:14px"></h:outputText>
+									</td>								
+								
+									<td width="100px" bgcolor="#F7F7F7">
+										<h:inputText value="#{empresaBean.emp.fantazia}" size="30" required="true" maxlength="70"></h:inputText><br />
+									</td>							
+								
+								</tr>										
+						</table>				
+					</rich:tab>
+				
+					<rich:tab header="Endereco" onheadermousemove="true">
+						<table width="600px" border="0">
+							<tr>
+								<td width="40px" align="right" bgcolor="#CCDDEE">
+									<h:outputText value="#{bundle.label_address_enterprise}" style="font-size:14px"></h:outputText>
+								</td>
+								<td width="100px" bgcolor="#F7F7F7">
+									<h:inputText value="#{empresaBean.emp.lougradouro}" size="30" required="true" maxlength="50"></h:inputText><br />
+								</td>
+								
+								<td width="40px" align="right" bgcolor="#CCDDEE">
+									<h:outputText value="#{bundle.label_bairro_enterprise}" style="font-size:14px"></h:outputText>
+								</td>
+								<td width="100px" bgcolor="#F7F7F7">
+									<h:inputText value="#{empresaBean.emp.bairro}" size="30" required="true" maxlength="50"></h:inputText><br />
+								</td>							
+															
+							</tr>
+							<tr>
+								<td width="40px" align="right" bgcolor="#CCDDEE">
+									<h:outputText value="#{bundle.label_city_enterprise}" style="font-size:14px"></h:outputText>
+								</td>
+								<td width="100px" bgcolor="#F7F7F7">
+									<h:inputText value="#{empresaBean.emp.municipio}" size="30" required="true" maxlength="35"></h:inputText><br />
+								</td>
+								
+								<td width="40px" align="right" bgcolor="#CCDDEE">
+									<h:outputText value="#{bundle.label_state_enterprise}" style="font-size:14px"></h:outputText>
+								</td>
+								<td width="100px" bgcolor="#F7F7F7">
+									<h:inputText value="#{empresaBean.emp.estado}" size="30" required="true" maxlength="35"></h:inputText><br />
+								</td>
+							</tr>
+							<tr>								
+								<td width="40px" align="right" bgcolor="#CCDDEE">
+									<h:outputText value="#{bundle.label_zipCode_enterprise}" style="font-size:14px"></h:outputText>
+								</td>
+								<td width="100px" bgcolor="#F7F7F7">
+									<h:inputText value="#{empresaBean.emp.cep}" size="30" required="true" maxlength="10"></h:inputText><br />
+								</td>							
+							</tr>							
+						</table>
+					</rich:tab>
+				
+					<rich:tab header="Contato" onheadermousemove="true">
+						<table width="600px" border="0">
+							<tr>
+								<td width="40px" align="right" bgcolor="#CCDDEE">
+									<h:outputText value="#{bundle.label_phone_enterprise}" style="font-size:14px"></h:outputText>
+								</td>
+								<td width="100px" bgcolor="#F7F7F7">
+									<h:inputText value="#{empresaBean.emp.telefone}" size="30" required="true" maxlength="13"></h:inputText><br />
+								</td>
+								
+								<td width="40px" align="right" bgcolor="#CCDDEE">
+									<h:outputText value="#{bundle.label_email_enterprise}" style="font-size:14px"></h:outputText>
+								</td>
+								<td width="100px" bgcolor="#F7F7F7">
+									<h:inputText value="#{empresaBean.emp.email}" size="30" id="emailComercial">										 
+									</h:inputText>
+								</td>													
+							</tr>						
+						</table>
+					</rich:tab>			
+				</rich:tabPanel>
+								                  	
+                  	<h:commandButton value="SALVAR" action="#{empresaBean.btnSalvar()}"></h:commandButton>			
+					<h:commandButton value="CANCELAR" action="index.xhtml"></h:commandButton>			
+			</h:form>
+			<br />			
+		</div>
+		
+		<div id="footer">
+			Copyright Sitename 2004
+		</div>
+	
+	</div>
+</h:body>
+	
+</html>

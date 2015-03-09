@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:a4j="http://richfaces.org/a4j"
+	  xmlns:rich="http://richfaces.org/rich">
+			
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<link rel="stylesheet" type="text/css" href="css/print.css" />		
+		<title>Enterprise in the Cloud</title>		
+	</h:head>
+	
+	<h:body>
+		
+		<h1>PROCEDIMENTO REALIZADO COM SUCESSO!</h1>
+		
+		<h:form>
+			<h:message />
+			<h:panelGrid columns="3" id="editarEmpresa">
+				
+				<h:outputText value="#{bundle.label_reason_enterprise}"/>
+				<h:outputText value="#{empresaBean.emp.razao}" /><br />
+				
+				<h:outputText value="#{bundle.label_fantasy_enterprise}"/>
+				<h:outputText value="#{empresaBean.emp.fantazia}" /><br />
+				
+				<h:outputText value="#{bundle.label_CNPJ_CPF_enterprise}"/>
+				<h:outputText value="#{empresaBean.emp.cpf_cnpj}" /><br />
+				
+				<h:outputText value="#{bundle.label_insEstadual_enterprise}"/>
+				<h:outputText value="#{empresaBean.emp.ins_estadual}"/><br />				
+				
+				<h:outputText value="#{bundle.label_address_enterprise}"/>
+				<h:outputText value="#{empresaBean.emp.lougradouro}" /><br />
+				
+				<h:outputText value="#{bundle.label_bairro_enterprise}"/>
+				<h:outputText value="#{empresaBean.emp.bairro}" /><br />				
+				
+				<h:outputText value="#{bundle.label_city_enterprise}"/>
+				<h:outputText value="#{empresaBean.emp.municipio}" /><br />
+				
+				<h:outputText value="#{bundle.label_state_enterprise}"/>
+				<h:outputText value="#{empresaBean.emp.estado}" /><br />
+				
+				<h:outputText value="#{bundle.label_zipCode_enterprise}"/>
+				<h:outputText value="#{empresaBean.emp.cep}" /><br />
+				
+				<h:outputText value="#{bundle.label_phone_enterprise}"/>
+				<h:outputText value="#{empresaBean.emp.telefone}" /><br />
+				
+				<h:outputText value="#{bundle.label_email_enterprise}"/>
+				<h:outputText value="#{empresaBean.emp.email}" /><br />
+							
+			</h:panelGrid>			
+			
+			<h:commandLink action="index" value="Voltar a pagina principal." />
+		
+		</h:form>		
+	</h:body>
+	</html>

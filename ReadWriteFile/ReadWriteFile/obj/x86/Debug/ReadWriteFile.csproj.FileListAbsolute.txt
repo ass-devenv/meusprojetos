@@ -1,0 +1,43 @@
+C:\Users\Alex Soares\SkyDrive\Documents\My Project C#\ReadWriteFile\ReadWriteFile\bin\Debug\ReadWriteFile.exe
+C:\Users\Alex Soares\SkyDrive\Documents\My Project C#\ReadWriteFile\ReadWriteFile\bin\Debug\ReadWriteFile.pdb
+C:\Users\Alex Soares\SkyDrive\Documents\My Project C#\ReadWriteFile\ReadWriteFile\obj\x86\Debug\ReadWriteFile.Form1.resources
+C:\Users\Alex Soares\SkyDrive\Documents\My Project C#\ReadWriteFile\ReadWriteFile\obj\x86\Debug\ReadWriteFile.Properties.Resources.resources
+C:\Users\Alex Soares\SkyDrive\Documents\My Project C#\ReadWriteFile\ReadWriteFile\obj\x86\Debug\ReadWriteFile.csproj.GenerateResource.Cache
+C:\Users\Alex Soares\SkyDrive\Documents\My Project C#\ReadWriteFile\ReadWriteFile\obj\x86\Debug\ReadWriteFile.exe
+C:\Users\Alex Soares\SkyDrive\Documents\My Project C#\ReadWriteFile\ReadWriteFile\obj\x86\Debug\ReadWriteFile.pdb
+C:\Users\Alex Soares\SkyDrive\Documents\My Project C#\ReadWriteFile\ReadWriteFile\obj\x86\Debug\Interop.AccessibilityCplAdminLib.dll
+C:\Users\Alex Soares\SkyDrive\Documents\My Project C#\ReadWriteFile\ReadWriteFile\obj\x86\Debug\Interop.MSExchangeLib.dll
+C:\Users\Alex Soares\SkyDrive\Documents\My Project C#\ReadWriteFile\ReadWriteFile\obj\x86\Debug\ReadWriteFile.csproj.ResolveComReference.cache
+C:\Users\Public\Documents\Documents\My Project C#\ReadWriteFile\ReadWriteFile\obj\x86\Debug\Interop.AccessibilityCplAdminLib.dll
+C:\Users\Public\Documents\Documents\My Project C#\ReadWriteFile\ReadWriteFile\obj\x86\Debug\Interop.MSExchangeLib.dll
+C:\Users\Public\Documents\Documents\My Project C#\ReadWriteFile\ReadWriteFile\obj\x86\Debug\ReadWriteFile.csproj.ResolveComReference.cache
+C:\Users\Public\Documents\Documents\My Project C#\ReadWriteFile\ReadWriteFile\obj\x86\Debug\ReadWriteFile.exe
+C:\Users\Public\Documents\Documents\My Project C#\ReadWriteFile\ReadWriteFile\obj\x86\Debug\ReadWriteFile.pdb
+C:\Users\Public\Documents\Documents\My Project C#\ReadWriteFile\ReadWriteFile\bin\Debug\ReadWriteFile.exe
+C:\Users\Public\Documents\Documents\My Project C#\ReadWriteFile\ReadWriteFile\bin\Debug\ReadWriteFile.pdb
+C:\Users\Public\Documents\Documents\My Project C#\ReadWriteFile\ReadWriteFile\bin\Debug\Microsoft.AnalysisServices.Layout.O14.dll
+C:\Users\Public\Documents\Documents\My Project C#\ReadWriteFile\ReadWriteFile\bin\Debug\cs\Microsoft.AnalysisServices.Layout.O14.resources.dll
+C:\Users\Public\Documents\Documents\My Project C#\ReadWriteFile\ReadWriteFile\bin\Debug\da\Microsoft.AnalysisServices.Layout.O14.resources.dll
+C:\Users\Public\Documents\Documents\My Project C#\ReadWriteFile\ReadWriteFile\bin\Debug\de\Microsoft.AnalysisServices.Layout.O14.resources.dll
+C:\Users\Public\Documents\Documents\My Project C#\ReadWriteFile\ReadWriteFile\bin\Debug\el\Microsoft.AnalysisServices.Layout.O14.resources.dll
+C:\Users\Public\Documents\Documents\My Project C#\ReadWriteFile\ReadWriteFile\bin\Debug\es\Microsoft.AnalysisServices.Layout.O14.resources.dll
+C:\Users\Public\Documents\Documents\My Project C#\ReadWriteFile\ReadWriteFile\bin\Debug\fi\Microsoft.AnalysisServices.Layout.O14.resources.dll
+C:\Users\Public\Documents\Documents\My Project C#\ReadWriteFile\ReadWriteFile\bin\Debug\fr\Microsoft.AnalysisServices.Layout.O14.resources.dll
+C:\Users\Public\Documents\Documents\My Project C#\ReadWriteFile\ReadWriteFile\bin\Debug\hu\Microsoft.AnalysisServices.Layout.O14.resources.dll
+C:\Users\Public\Documents\Documents\My Project C#\ReadWriteFile\ReadWriteFile\bin\Debug\it\Microsoft.AnalysisServices.Layout.O14.resources.dll
+C:\Users\Public\Documents\Documents\My Project C#\ReadWriteFile\ReadWriteFile\bin\Debug\ja\Microsoft.AnalysisServices.Layout.O14.resources.dll
+C:\Users\Public\Documents\Documents\My Project C#\ReadWriteFile\ReadWriteFile\bin\Debug\ko\Microsoft.AnalysisServices.Layout.O14.resources.dll
+C:\Users\Public\Documents\Documents\My Project C#\ReadWriteFile\ReadWriteFile\bin\Debug\nl\Microsoft.AnalysisServices.Layout.O14.resources.dll
+C:\Users\Public\Documents\Documents\My Project C#\ReadWriteFile\ReadWriteFile\bin\Debug\no\Microsoft.AnalysisServices.Layout.O14.resources.dll
+C:\Users\Public\Documents\Documents\My Project C#\ReadWriteFile\ReadWriteFile\bin\Debug\pl\Microsoft.AnalysisServices.Layout.O14.resources.dll
+C:\Users\Public\Documents\Documents\My Project C#\ReadWriteFile\ReadWriteFile\bin\Debug\pt\Microsoft.AnalysisServices.Layout.O14.resources.dll
+C:\Users\Public\Documents\Documents\My Project C#\ReadWriteFile\ReadWriteFile\bin\Debug\pt-PT\Microsoft.AnalysisServices.Layout.O14.resources.dll
+C:\Users\Public\Documents\Documents\My Project C#\ReadWriteFile\ReadWriteFile\bin\Debug\ru\Microsoft.AnalysisServices.Layout.O14.resources.dll
+C:\Users\Public\Documents\Documents\My Project C#\ReadWriteFile\ReadWriteFile\bin\Debug\sv\Microsoft.AnalysisServices.Layout.O14.resources.dll
+C:\Users\Public\Documents\Documents\My Project C#\ReadWriteFile\ReadWriteFile\bin\Debug\tr\Microsoft.AnalysisServices.Layout.O14.resources.dll
+C:\Users\Public\Documents\Documents\My Project C#\ReadWriteFile\ReadWriteFile\bin\Debug\zh-Hans\Microsoft.AnalysisServices.Layout.O14.resources.dll
+C:\Users\Public\Documents\Documents\My Project C#\ReadWriteFile\ReadWriteFile\bin\Debug\zh-Hant\Microsoft.AnalysisServices.Layout.O14.resources.dll
+C:\Users\Public\Documents\Documents\My Project C#\ReadWriteFile\ReadWriteFile\obj\x86\Debug\ReadWriteFile.csprojResolveAssemblyReference.cache
+C:\Users\Public\Documents\Documents\My Project C#\ReadWriteFile\ReadWriteFile\obj\x86\Debug\ReadWriteFile.Form1.resources
+C:\Users\Public\Documents\Documents\My Project C#\ReadWriteFile\ReadWriteFile\obj\x86\Debug\ReadWriteFile.Properties.Resources.resources
+C:\Users\Public\Documents\Documents\My Project C#\ReadWriteFile\ReadWriteFile\obj\x86\Debug\ReadWriteFile.csproj.GenerateResource.Cache
